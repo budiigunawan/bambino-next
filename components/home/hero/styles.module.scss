@@ -1,0 +1,11 @@
+@import 'app/styles/variables.scss';
+@import 'app/styles/mixins.scss';
+
+.hero {
+  position: relative;
+  margin: 3.5rem 0;
+
+  @include breakpoint('md') {
+    margin: 5rem 0;
+  }
+}

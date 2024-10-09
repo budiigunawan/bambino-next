@@ -1,3 +1,9 @@
+import Hero from '@/components/home/hero';
+
 export default function Home() {
-  return <h1>Hello, Next.js!</h1>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
