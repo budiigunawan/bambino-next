@@ -1,5 +1,9 @@
-import React from 'react';
+import styles from './styles.module.scss';
 
 export default function Footer() {
-  return <div>Footer</div>;
+  return (
+    <footer className={styles.footer}>
+      <p>Copyright © Bambino 2024</p>
+    </footer>
+  );
 }
