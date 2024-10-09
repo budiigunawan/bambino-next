@@ -22,15 +22,15 @@
 
     @include breakpoint('md') {
       padding: 0;
-      max-width: 42rem;
+      max-width: $max-w-md;
     }
 
     @include breakpoint('lg') {
-      max-width: 56rem;
+      max-width: $max-w-lg;
     }
 
     @include breakpoint('xl') {
-      max-width: 72rem;
+      max-width: $max-w-xl;
     }
   }
 

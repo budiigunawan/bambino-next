@@ -1,2 +1,21 @@
 @import 'variables.scss';
 @import 'reset.scss';
+@import 'app/styles/mixins.scss';
+
+main {
+  min-height: 44rem;
+  margin: 0 auto;
+
+  @include breakpoint('md') {
+    max-width: $max-w-md;
+  }
+
+  @include breakpoint('lg') {
+    min-height: 51rem;
+    max-width: $max-w-lg;
+  }
+
+  @include breakpoint('xl') {
+    max-width: $max-w-xl;
+  }
+}

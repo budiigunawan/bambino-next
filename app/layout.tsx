@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} ${plusJakartaSans.variable}`}>
         <Navbar />
-        <main>{children}</main>
+        <main className="container">{children}</main>
         <Footer />
       </body>
     </html>
