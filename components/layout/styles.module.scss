@@ -1,18 +1,64 @@
 @import 'app/styles/variables.scss';
 @import 'app/styles/mixins.scss';
 
-.element {
-  background-color: yellow; // Regular styles (For below 320px)
+.navbar {
+  border-bottom: 1px solid $gray-light;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
 
-  @include breakpoint('sm') {
-    background-color: red; // Styles for 'small' breakpoint or above (568px)
+  a {
+    text-decoration: none;
   }
 
-  @include breakpoint('md') {
-    background-color: green; // Styles for 'medium' breakpoint or above (768px)
+  &__container {
+    margin: 0 auto;
+    height: 3.5rem;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 1rem;
+
+    @include breakpoint('md') {
+      padding: 0;
+      max-width: 42rem;
+    }
+
+    @include breakpoint('lg') {
+      max-width: 56rem;
+    }
+
+    @include breakpoint('xl') {
+      max-width: 72rem;
+    }
   }
 
-  @include breakpoint('lg') {
-    background-color: blue; // Styles for 'large' breakpoint or above (1024px)
+  &__logo {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+      font-family: $font-poppins, sans-serif;
+      color: $blue-dark;
+    }
+  }
+
+  &__links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.25rem;
+
+    li a {
+      color: $blue-dark;
+      font-family: $font-plus-jakarta-sans, sans-serif;
+    }
   }
 }
