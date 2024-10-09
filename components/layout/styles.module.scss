@@ -1,0 +1,18 @@
+@import 'app/styles/variables.scss';
+@import 'app/styles/mixins.scss';
+
+.element {
+  background-color: yellow; // Regular styles (For below 320px)
+
+  @include breakpoint('sm') {
+    background-color: red; // Styles for 'small' breakpoint or above (568px)
+  }
+
+  @include breakpoint('md') {
+    background-color: green; // Styles for 'medium' breakpoint or above (768px)
+  }
+
+  @include breakpoint('lg') {
+    background-color: blue; // Styles for 'large' breakpoint or above (1024px)
+  }
+}
