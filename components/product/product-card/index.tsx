@@ -11,7 +11,7 @@ type ProductCardParams = {
 export default function ProductCard({ dataProduct }: ProductCardParams) {
   return (
     <div className={styles.product_card}>
-      <Link href={`products/${dataProduct.slug}`}>
+      <Link href={`/products/${dataProduct.slug}`}>
         <div className={styles.product_card__header}>
           <Image
             src={dataProduct.imageUrl}
