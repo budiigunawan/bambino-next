@@ -1,6 +1,7 @@
 import { Product } from '@/app/lib/types';
 import styles from './styles.module.scss';
 import ProductSkeleton from '@/components/product/product-skeleton';
+import ProductCard from '@/components/product/product-card';
 
 type CollectionsParams = {
   products: Product[];
@@ -26,9 +27,9 @@ export default function Collection({ products, isLoading }: CollectionsParams) {
         )}
         {!isLoading && products?.length > 0 && (
           <>
-            <div>
-              {products.map((product, index) => (
-                <p key={index}>{product.name}</p>
+            <div className={styles.collection__body__products}>
+              {products.map((product) => (
+                <ProductCard key={product.id} dataProduct={product} />
               ))}
             </div>
           </>
