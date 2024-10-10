@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { rupiahFormatter } from '@/app/lib/helpers';
 import Image from 'next/image';
+import { FaSquareFacebook, FaSquareXTwitter } from 'react-icons/fa6';
+import { rupiahFormatter } from '@/app/lib/helpers';
 import { Product } from '@/app/lib/types';
 
 type ProductDetailParams = {
@@ -46,10 +47,22 @@ export default function ProductDetail({ dataProduct }: ProductDetailParams) {
             <p>Share</p>
             <ul className={styles.detail__container__main__share__links}>
               <li>
-                <a href="#">Twitter</a>
+                <a
+                  href={`https://twitter.com/share?url=https://evermos.budigunawan.com/products/${dataProduct.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaSquareXTwitter />
+                </a>
               </li>
               <li>
-                <a href="#">Facebook</a>
+                <a
+                  href={`http://facebook.com/share.php?u=https://evermos.budigunawan.com/products/${dataProduct.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaSquareFacebook />
+                </a>
               </li>
             </ul>
           </section>
