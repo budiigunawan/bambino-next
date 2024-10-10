@@ -21,9 +21,9 @@ export default function ProductCard({ dataProduct }: ProductCardParams) {
             sizes="100vw"
             style={{ width: '100%', height: 'auto' }}
           />
-          <h3 className={styles.product_card__header__title}>
+          <div className={styles.product_card__header__title}>
             {dataProduct.name}
-          </h3>
+          </div>
         </div>
         <div className={styles.product_card__body}>
           <p>{rupiahFormatter(dataProduct.price)}</p>

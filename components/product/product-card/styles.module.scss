@@ -23,12 +23,10 @@
     &__title {
       font-size: 1.25rem;
       line-height: 1.75rem;
-      min-height: 5rem;
       margin-top: 0.25rem;
-
-      @include breakpoint('md') {
-        min-height: 3.5rem;
-      }
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 
