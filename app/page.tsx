@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Collection products={[]} isLoading={false} />
+      <Collection products={[]} isLoading={true} />
     </>
   );
 }
