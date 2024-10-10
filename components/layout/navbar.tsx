@@ -10,11 +10,11 @@ export default function Navbar() {
           <Image src="/logo.png" height={40} width={40} alt="Bambino logo" />
           <p>Bambino</p>
         </Link>
-        <ul className={styles.navbar__links}>
+        {/* <ul className={styles.navbar__links}>
           <li>
             <Link href="/products">Products</Link>
           </li>
-        </ul>
+        </ul> */}
       </nav>
     </div>
   );
