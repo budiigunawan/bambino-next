@@ -18,7 +18,7 @@ export default function ProductDetail({
 }: ProductDetailParams) {
   const [quantity, setQuantity] = useState<number>(1);
 
-  const { addToCart, cart } = useCartStore((state) => state);
+  const { addToCart } = useCartStore((state) => state);
 
   const handlePlus = () => {
     setQuantity((quantity) => quantity + 1);
@@ -98,7 +98,6 @@ export default function ProductDetail({
             ) : (
               <>
                 <p>Quantity</p>
-                <p>{JSON.stringify(cart)}</p>
                 <div
                   className={styles.detail__container__main__quantity__input}
                 >
