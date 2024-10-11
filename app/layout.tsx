@@ -32,7 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${plusJakartaSans.variable}`}>
+      <body
+        className={`${poppins.variable} ${plusJakartaSans.variable}`}
+        suppressHydrationWarning={true}
+      >
         <Navbar />
         <main className="container">{children}</main>
         <Footer />

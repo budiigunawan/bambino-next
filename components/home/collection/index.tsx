@@ -9,7 +9,10 @@ type CollectionsParams = {
   isLoading: boolean;
 };
 
-export default function Collection({ products, isLoading }: CollectionsParams) {
+export default function Collection({
+  products = [],
+  isLoading,
+}: CollectionsParams) {
   return (
     <section className={styles.collection}>
       <h2 className={styles.collection__header}>Collection</h2>
