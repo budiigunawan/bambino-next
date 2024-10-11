@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import { FaSquareFacebook, FaSquareXTwitter } from 'react-icons/fa6';
@@ -14,6 +14,28 @@ export default function ProductDetail({
   dataProduct,
   isLoading,
 }: ProductDetailParams) {
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const handlePlus = () => {
+    setQuantity((quantity) => quantity + 1);
+  };
+
+  const handleMinus = () => {
+    setQuantity((quantity) => quantity - 1);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuantity(parseInt(e.target.value));
+  };
+
+  const handleBlur = () => {
+    if (!quantity) {
+      setQuantity(1);
+    } else if (quantity > dataProduct.stock) {
+      setQuantity(dataProduct.stock);
+    }
+  };
+
   return (
     <section className={styles.detail}>
       <div className={styles.detail__container}>
@@ -68,9 +90,23 @@ export default function ProductDetail({
                 <div
                   className={styles.detail__container__main__quantity__input}
                 >
-                  <button>-</button>
-                  <input type="number" name="quantity" id="quantity" />
-                  <button>+</button>
+                  <button onClick={handleMinus} disabled={quantity === 1}>
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    name="quantity"
+                    id="quantity"
+                    value={quantity}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <button
+                    onClick={handlePlus}
+                    disabled={quantity === dataProduct?.stock}
+                  >
+                    +
+                  </button>
                 </div>
                 <button
                   className={styles.detail__container__main__quantity__submit}
