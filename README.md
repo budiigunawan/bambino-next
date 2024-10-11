@@ -18,6 +18,7 @@ Bambino is a simple and user-friendly e-commerce platform built to sell baby clo
 ### Prev Bambino Version Built using React JS
 
 - Website: <https://bambino.budigunawan.com/>
+- UI Design: [Figma](https://www.figma.com/design/RnMTmQul8AerqRZ1DMrui9/budigunawan.com?node-id=171-109&t=iYWQbpRINrb9JdaU-1)
 
 ### Inspirations
 
