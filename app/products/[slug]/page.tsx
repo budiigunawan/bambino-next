@@ -17,9 +17,9 @@ export default function Page() {
 
   const productsRecommendation: Product[] = useMemo(() => {
     if (recommendationsData?.products.length > 0) {
-      return recommendationsData.products.filter(
-        (product: Product) => product.slug !== slug
-      );
+      return recommendationsData.products
+        .filter((product: Product) => product.slug !== slug)
+        .slice(0, 4);
     }
 
     return [];
