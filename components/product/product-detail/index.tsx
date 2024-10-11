@@ -1,9 +1,11 @@
+'use client';
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import { FaSquareFacebook, FaSquareXTwitter } from 'react-icons/fa6';
 import { rupiahFormatter } from '@/app/lib/helpers';
 import { Product } from '@/app/lib/types';
+import { useCartStore } from '@/app/store';
 
 type ProductDetailParams = {
   dataProduct: Product;
@@ -15,6 +17,8 @@ export default function ProductDetail({
   isLoading,
 }: ProductDetailParams) {
   const [quantity, setQuantity] = useState<number>(1);
+
+  const { addToCart, cart } = useCartStore((state) => state);
 
   const handlePlus = () => {
     setQuantity((quantity) => quantity + 1);
@@ -34,6 +38,13 @@ export default function ProductDetail({
     } else if (quantity > dataProduct.stock) {
       setQuantity(dataProduct.stock);
     }
+  };
+
+  const handleAddToCart = () => {
+    addToCart({
+      product: dataProduct,
+      quantity,
+    });
   };
 
   return (
@@ -87,6 +98,7 @@ export default function ProductDetail({
             ) : (
               <>
                 <p>Quantity</p>
+                <p>{JSON.stringify(cart)}</p>
                 <div
                   className={styles.detail__container__main__quantity__input}
                 >
@@ -100,6 +112,8 @@ export default function ProductDetail({
                     value={quantity}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    min={1}
+                    max={dataProduct.stock}
                   />
                   <button
                     onClick={handlePlus}
@@ -110,6 +124,7 @@ export default function ProductDetail({
                 </div>
                 <button
                   className={styles.detail__container__main__quantity__submit}
+                  onClick={handleAddToCart}
                 >
                   Add to cart
                 </button>
