@@ -26,6 +26,16 @@
       }
     }
 
+    &__image_skeleton {
+      width: 25rem;
+      height: 25rem;
+
+      @include breakpoint('lg') {
+        width: 35rem;
+        height: 35rem;
+      }
+    }
+
     &__main {
       grid-column: span 12 / span 12;
 
