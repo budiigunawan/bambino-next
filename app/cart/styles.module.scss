@@ -1,7 +1,13 @@
 @import 'app/styles/variables.scss';
+@import 'app/styles/mixins.scss';
 
 .cart {
   margin: 5rem 0;
+  padding: 1rem;
+
+  @include breakpoint('md') {
+    padding: 0;
+  }
 
   &__header {
     font-weight: 700;
